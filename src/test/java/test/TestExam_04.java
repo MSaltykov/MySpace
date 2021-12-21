@@ -12,13 +12,15 @@ public class TestExam_04 {
         System.out.println("Введите часы и минуты");
         Scanner console = new Scanner(System.in);
         int hours = console.nextInt();
-        int minutes = console.nextInt();
+        double minutes = console.nextInt();
         if (hours > 23) System.out.println("Неверное значение часов");
         if (hours > 12) hours = (hours - 12);
         if (minutes > 59) System.out.println("Неверное значение минут");
-        int h = ((hours * 30) + ((minutes / 60) * 6));
-        int m = minutes * 6;
-
+        /**
+         * Этот метод рассчитывает смещение часовой стрелки в течение часа
+         */
+        double h = ((hours * 30) + ((minutes / 60) * 6));
+        double m = minutes * 6;
         System.out.println("Угол между часовой и минутной стрелками составляет " + (Math.abs(h - m)) + " градусов");
     }
 }
